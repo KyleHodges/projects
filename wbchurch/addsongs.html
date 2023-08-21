@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    addsongs
+{% endblock %}
+
+{% block main %}
+<div>
+    <p class="addsongs">Modern Songs</p>
+    <form action="/addsongs" method="post">
+        <div class="mb-3">
+            <input autocomplete="off" autofocus class="form-control mx-auto w-auto" name="title" placeholder="Song Title" type="text">
+        </div>
+        <div class="mb-3">
+            <input autocomplete="off" autofocus class="form-control mx-auto w-auto" name="artist" placeholder="Artist" type="text">
+        </div>
+
+
+        <br><br>
+        <p class="addsongs">Hymns</p>
+
+            <div class="mb-3">
+                <input autocomplete="off" autofocus class="form-control mx-auto w-auto" name="number" placeholder="Hymn Number" type="number">
+            </div>
+            <div class="mb-3">
+                <input autocomplete="off" autofocus class="form-control mx-auto w-auto" name="htitle" placeholder="Title" type="text">
+            </div>
+            <button class="btn btn-primary" type="submit">Add</button>
+        </form>
+
+
+</div>
+{% endblock %}

@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Kids
+{% endblock %}
+
+{% block main %}
+<script
+src="https://code.jquery.com/jquery-3.2.1.js">
+</script>
+<div>
+    <p class="addsongs">Children's Church</p>
+    <form enctype = "multipart/form-data" onsubmit="return false;" >
+        <input id="file" type="file" name="static_file" />
+        <button id="upload-button" onclick="uploadFile(this.form)"> Upload </button>
+        </form>
+      <div id="static_file_response"> </div>
+
+      <script type="text/javascript" src="/static/app.js"></script>
+      </script>
+</div>
+{% endblock %}
