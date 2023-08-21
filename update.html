@@ -1,0 +1,115 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    update
+{% endblock %}
+
+{% block main %}
+<div>
+    <h1>Update Profile</h1>
+
+          <form class="row g-3" style="text-align: left;" action="/update" method="post">
+            <select name="puppy">
+                <option value="" selected disabled hidden>Puppy</option>
+                {% for name in names %}
+                    <option value="{{ name }}">{{ name["name"] }}</option>
+                {% endfor %}
+            </select>
+            <br><br>
+            <div class="col-md-8">
+              <label for="registration" class="form-label">AKC Registration</label>
+              <input type="text" class="form-control" name="registration" id="registration" placeholder="Y/N">
+            </div>
+            <div class="col-md-6">
+              <label for="location" class="form-label">Ministry Site</label>
+              <input type="text" class="form-control" name="location" id="location" placeholder="Location/Church">
+            </div>
+            <div class="col-md-6">
+              <label for="birthday" class="form-label">Birthday</label>
+              <input type="date" class="form-control" name ="birthday" id="birthday">
+            </div>
+            <div class="col-md-6">
+              <label for="primary" class="form-label">Primary Handler</label>
+              <input type="text" class="form-control" name="primary" id="primary" placeholder="Name">
+            </div>
+            <div class="col-md-6">
+              <label for="secondary" class="form-label">Secondary Handler</label>
+              <input type="text" class="form-control" name ="secondary" id="secondary" placeholder="Name">
+            </div>
+            <div class="col-md-6">
+                <label><b>Gender</b></label>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="gender" id="gender" value="M">
+                    <label class="form-check-label" for="gender">
+                      Male
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="gender" id="gender" value="F">
+                    <label class="form-check-label" for="gender">
+                      Female
+                    </label>
+                </div>
+            </div>
+            <div class="col-md-6">
+              <label for="vet" class="form-label">Last Vet Visit</label>
+              <input type="date" class="form-control" name="vet" id="vet">
+            </div>
+            <div class="col-md-4">
+                <label><b><u>STAR Puppy</u></b></label>
+                <div>
+                <input type="checkbox" name="aggression" value="Y" /> Free from aggression<br>
+                <input type="checkbox" name="hug" value="Y" /> Allows holding/hugging<br>
+                <input type="checkbox" name="takeaway" value="Y" /> Allows take away treat/toy<br>
+                <input type="checkbox" name="petting" value="Y" /> Allows stranger to pet<br>
+                <input type="checkbox" name="exam" value="Y" /> Allows handling and exam<br>
+                <input type="checkbox" name="straight" value="Y" /> Follows handler on lead in straight line<br>
+                <input type="checkbox" name="leash5" value="Y" /> Walks w/leash past others 5ft away<br>
+                <input type="checkbox" name="sit" value="Y" /> Sit on command<br>
+                <input type="checkbox" name="down" value="Y" /> Down on command<br>
+                <input type="checkbox" name="stay10" value="Y" /> Stay w/another 10 steps and return<br>
+
+
+                </div>
+            </div>
+            <div class="col-md-4">
+                <label><b><u>CGC</u></b></label>
+                <div>
+                <input type="checkbox" name="accepting" value="Y" /> Accepting a friendly person<br>
+                <input type="checkbox" name="sitpet" value="Y" /> Sit politely for petting<br>
+                <input type="checkbox" name="groom" value="Y" /> Allows grooming<br>
+                <input type="checkbox" name="walkloose" value="Y" /> Walks on loose lead<br>
+                <input type="checkbox" name="walkcrowd" value="Y" /> Walks through crowd in control<br>
+                <input type="checkbox" name="sitandstay" value="Y" /> Sit and stay<br>
+                <input type="checkbox" name="downandstay" value="Y" /> Down and stay<br>
+                <input type="checkbox" name="comefromss" value="Y" /> Come when called from sit and stay<br>
+                <input type="checkbox" name="leaveit" value="Y" /> Leave it<br>
+                <input type="checkbox" name="dogreact" value="Y" /> Does not react to strange dog<br>
+                <input type="checkbox" name="distraction" value="Y" /> Just casual reaction to distraction<br>
+                <input type="checkbox" name="supstranger" value="Y" /> Responds when supervised by stranger<br>
+
+
+                </div>
+            </div>
+            <div class="col-md-4">
+                <label><b><u>Community Canine</u></b></label>
+                <div>
+                <input type="checkbox" name="downandstay20" value="Y" /> Down and stay 20 feet<br>
+                <input type="checkbox" name="waits" value="Y" /> Stand, sit, lies down and waits<br>
+                <input type="checkbox" name="walkdirection" value="Y" /> Walks, turns, stops, paces<br>
+                <input type="checkbox" name="walkloosecrowd" value="Y" /> Walks w/loose lead in crowd<br>
+                <input type="checkbox" name="walkdistraction" value="Y" /> Walks past distraction calmly<br>
+                <input type="checkbox" name="sitstaygroup" value="Y" /> Sit-stay in group 3 people/dogs<br>
+                <input type="checkbox" name="carrypet" value="Y" /> Person w/object approach and pet<br>
+                <input type="checkbox" name="comedistraction" value="Y" /> Comes from distraction 20ft away<br>
+                <input type="checkbox" name="doorway" value="Y " /> Stay and wait for door passage<br>
+
+
+                </div>
+            </div>
+            <div class="mb-3">
+                <button class="btn btn-dark btn-lg" type="submit" style="color: black; background-color: #DCDCDC;">🐾 Update 🐾</button>
+            </div>
+          </form>
+</div>
+{% endblock %}

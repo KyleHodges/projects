@@ -1,0 +1,134 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    print
+{% endblock %}
+
+{% block main %}
+<script>
+  function printDiv() {
+      var divContents = document.getElementById("GFG").innerHTML;
+      var a = window.open('', '', 'height=500, width=500');
+      a.document.write('<html>');
+      a.document.write(divContents);
+      a.document.write('</body></html>');
+      a.document.close();
+      a.print();
+  }
+</script>
+<div id="GFG">
+
+        <p class="print"><h1>Profile for {{ name }}</h1></p>
+        <div class="container">
+            <div class="row g-3">
+              <div class="col-4">
+                {% for row in registration %}
+                <div class="p-3 border bg-light"><b><u>REGISTRATION:</u></b>  {{ row["registration"] }}</div>
+                {% endfor %}
+              </div>
+              <div class="col-4">
+                <div class="p-3 border bg-light"><b><u>AGE:</u></b>  {{ age }}</div>
+              </div>
+              <div class="col-4">
+                {% for row in gender %}
+                <div class="p-3 border bg-light"><b><u>GENDER:</u></b>  {{ row["gender"] }}</div>
+                {% endfor %}
+              </div>
+              <div class="col-4">
+                {% for row in location %}
+                <div class="p-3 border bg-light"><b><u>LOCATION:</u></b>  {{ row["location"] }}</div>
+                {% endfor %}
+              </div>
+              <div class="col-4">
+                {% for row in primary %}
+                <div class="p-3 border bg-light"><b><u>PRIMARY HANDLER:</u></b> {{ row["hand_p"] }}</div>
+                {% endfor %}
+
+              </div>
+              <div class="col-4">
+                {% for row in secondary %}
+                <div class="p-3 border bg-light"><b><u>SECOND HANDLER:</u></b>  {{ row["hand_s"] }}</div>
+                {% endfor %}
+              </div>
+              <div class="col-4">
+                {% for row in vet %}
+                <div class="p-3 border bg-light"><b><u>LAST VET VISIT:</u></b>  {{ row["vet"] }}</div>
+                {% endfor %}
+              </div>
+              <div class="col-4">
+                <div class="p-3 border bg-light"><b>🐾 SKILLS TRAINING 🐾</b></div>
+              </div>
+              <div class="col-4">
+                <div class="p-3 border bg-light"><b><u>FACEBOOK:</u></b></div>
+              </div>
+              <div class="col-4">
+                <div class="p-3 border bg-light"><b><u>STAR PUPPY</u></b>
+                  <br>
+                  <div style="text-align: left;">
+                    {% for row in skills %}
+                    {{ row["aggression"] }}: Free from aggression<br>
+                    {{ row["hug"] }}: Allows holding/hugging<br>
+                    {{ row["takeaway"] }}: Allows take away treat/toy<br>
+                    {{ row["petting"] }}: Allows stranger to pet<br>
+                    {{ row["exam"] }}: Allows handling and exam<br>
+                    {{ row["straight"] }}: Follows handler on lead in straight line<br>
+                    {{ row["leash5"] }}: Walks w/leash past others 5ft away<br>
+                    {{ row["sit"] }}: Sit on command<br>
+                    {{ row["down"] }}: Down on command<br>
+                    {{ row["stay10"] }}: Stay w/another 10 steps and return<br>
+                    {% endfor %}
+                    </div>
+                </div>
+              </div>
+              <div class="col-4">
+                <div class="p-3 border bg-light"><b><u>CGC</u></b>
+                  <br>
+                  <div style="text-align: left;">
+                    {% for row in skills %}
+                    {{ row["accepting"] }}: Accepting a friendly person<br>
+                    {{ row["sitpet"] }}: Sit politely for petting<br>
+                    {{ row["groom"] }}: Allows grooming<br>
+                    {{ row["walkloose"] }}: Walks on loose lead<br>
+                    {{ row["walkcrowd"] }}: Walks through crowd in control<br>
+                    {{ row["sitandstay"] }}: Sit and stay<br>
+                    {{ row["downandstay"] }}: Down and stay<br>
+                    {{ row["comefromss"] }}: Come when called from sit and stay<br>
+                    {{ row["leaveit"] }}: Leave it<br>
+                    {{ row["dogreact"] }}: Does not react to strange dog<br>
+                    {{ row["distraction"] }}: Just casual reaction to distraction<br>
+                    {{ row["supstranger"] }}: Responds when supervised by stranger<br>
+                    {% endfor %}
+                    </div>
+                </div>
+              </div>
+              <div class="col-4">
+                <div class="p-3 border bg-light"><b><u>COMMUNItY CANINE</u></b>
+                  <br>
+                  <div style="text-align: left;">
+                    {% for row in skills %}
+                    {{ row["downandstay20"] }}: Down and stay 20 feet<br>
+                    {{ row["waits"] }}: Stand, sit, lies down and waits<br>
+                    {{ row["walkdirection"] }}: Walks, turns, stops, paces<br>
+                    {{ row["walkloosecrowd"] }}: Walks w/loose lead in crowd<br>
+                    {{ row["walkdistraction"] }}: Walks past distraction calmly<br>
+                    {{ row["sitstaygroup"] }}: Sit-stay in group 3 people/dogs<br>
+                    {{ row["carrypet"] }}: Person w/object approach and pet<br>
+                    {{ row["comedistraction"] }}: Comes from distraction 20ft away<br>
+                    {{ row["doorway"] }}: Stay and wait for door passage<br>
+                    {% endfor %}
+                    </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <br>
+          <br>
+        <div class="d-print-none">
+            <input class="btn btn-dark btn-lg" type="button" onclick="window.print();" style="color: black; background-color: #DCDCDC;" value="🐾 Print Profile 🐾">
+        </div>
+
+</div>
+{% endblock %}
+

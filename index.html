@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    index
+{% endblock %}
+
+{% block main %}
+<div>
+    <p class="index"><h2><b>Puppy Profiles</b></h2></p>
+    <form action="/" method="post">
+        <select name="puppy">
+            <option value="" selected disabled hidden>Puppy</option>
+            {% for name in names %}
+                <option value="{{ name['name'] }}">{{ name["name"] }}</option>
+            {% endfor %}
+        </select><br><br>
+        <div class="mb-3">
+            <button class="btn btn-primary" type="submit">Generate Profile</button>
+        </div>
+    </form>
+
+</div>
+{% endblock %}
