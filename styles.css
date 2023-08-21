@@ -2,18 +2,12 @@
 nav .navbar-brand
 {
     font-size: xx-large;
-
 }
 
 /* Colors for brand */
-nav .nav-link
-{
-    color: black
-}
-nav .navbar-brand .white
+nav .navbar-brand .black
 {
     color: black;
-
 }
 nav .navbar-brand .red
 {
@@ -51,10 +45,4 @@ label {
 input,
 label {
     margin: 0.4rem 0;
-}
-
-div.update
-{
-    color: black;
-
 }

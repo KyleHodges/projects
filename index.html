@@ -1,23 +1,184 @@
 {% extends "layout.html" %}
 
 {% block title %}
-    index
+    Index
 {% endblock %}
 
 {% block main %}
 <div>
-    <p class="index"><h2><b>Puppy Profiles</b></h2></p>
-    <form action="/" method="post">
-        <select name="puppy">
-            <option value="" selected disabled hidden>Puppy</option>
-            {% for name in names %}
-                <option value="{{ name['name'] }}">{{ name["name"] }}</option>
+ <p class="service">Order of Service<br>Generator</p>
+ <form action="/" method="post">
+    <h2>Service Date</h2>
+    <select name="service-date">
+        <option value="" selected disabled hidden>Select</option>
+        {% for row in dates %}
+            <option value="{{ row['date'] }}">{{ row["date"] }}</option>
+        {% endfor %}
+    </select>
+
+    <h2 style="color: red">Call to Worship</h2>
+    <div class="mb-3">
+        <h4>Hymns</h4>
+        <select name="call_h">
+            <option value="" selected disabled hidden>Select</option>
+            {% for row in hymns %}
+                <option value="{{ row['s_title'] }}">{{ row["s_title"] }}</option>
             {% endfor %}
-        </select><br><br>
-        <div class="mb-3">
-            <button class="btn btn-primary" type="submit">Generate Profile</button>
-        </div>
-    </form>
+        </select>
+        <br><br>
+        <h4>Modern songs</h4>
+        <select name="call_s">
+            <option value="" selected disabled hidden>Select</option>
+            {% for row in songs %}
+                <option value="{{ row['s_title'] }}">{{ row["s_title"] }}</option>
+            {% endfor %}
+        </select>
+        <br><br><br>
+    </div>
+
+    <div class="mb-3" style="background-color: lightgrey">
+        <h2 style="color: red">Announcements</h2>
+        <h3><u>SONG 1</u></h3>
+        <h4>Hymns</h4>
+        <select name="s1_h">
+            <option value="" selected disabled hidden>Select</option>
+            {% for row in hymns %}
+                <option value="{{ row['s_title'] }}" placeholder="Select">{{ row["s_title"] }}</option>
+            {% endfor %}
+        </select>
+        <br><br>
+        <h4>Modern songs</h4>
+        <select name="s1_s">
+            <option value="" selected disabled hidden>Select</option>
+            {% for row in songs %}
+                <option value="{{ row['s_title'] }}">{{ row["s_title"] }}</option>
+            {% endfor %}
+        </select>
+        <br><br>
+        <h3><u>SONG 2</u></h3>
+        <h4>Hymns</h4>
+        <select name="s2_h">
+            <option value="" selected disabled hidden>Select</option>
+            {% for row in hymns %}
+                <option value="{{ row['s_title'] }}" placeholder="Select">{{ row["s_title"] }}</option>
+            {% endfor %}
+        </select>
+        <br><br>
+        <h4>Modern songs</h4>
+        <select name="s2_s">
+            <option value="" selected disabled hidden>Select</option>
+            {% for row in songs %}
+                <option value="{{ row['s_title'] }}">{{ row["s_title"] }}</option>
+            {% endfor %}
+        </select>
+        <br><br>
+        <h3><u>SONG 3</u></h3>
+        <h4>Hymns</h4>
+        <select name="s3_h">
+            <option value="" selected disabled hidden>Select</option>
+            {% for row in hymns %}
+                <option value="{{ row['s_title'] }}" placeholder="Select">{{ row["s_title"] }}</option>
+            {% endfor %}
+        </select>
+        <br><br>
+        <h4>Modern songs</h4>
+        <select name="s3_s">
+            <option value="" selected disabled hidden>Select</option>
+            {% for row in songs %}
+                <option value="{{ row['s_title'] }}">{{ row["s_title"] }}</option>
+            {% endfor %}
+        </select>
+        <br><br>
+        <h3><u>SONG 4</u></h3>
+        <h4>Hymns</h4>
+        <select name="s4_h">
+            <option value="" selected disabled hidden>Select</option>
+            {% for row in hymns %}
+                <option value="{{ row['s_title'] }}" placeholder="Select">{{ row["s_title"] }}</option>
+            {% endfor %}
+        </select>
+        <br><br>
+        <h4>Modern songs</h4>
+        <select name="s4_s">
+            <option value="" selected disabled hidden>Select</option>
+            {% for row in songs %}
+                <option value="{{ row['s_title'] }}">{{ row["s_title"] }}</option>
+            {% endfor %}
+        </select>
+        <br><br>
+    </div>
+
+    <div class="mb-3">
+        <h2 style="color: red">Offertory</h2>
+        <h4>Hymns</h4>
+        <select name="offer_h">
+            <option value="" selected disabled hidden>Select</option>
+            {% for row in hymns %}
+                <option value="{{ row['s_title'] }}" placeholder="Select">{{ row["s_title"] }}</option>
+            {% endfor %}
+        </select>
+        <br><br>
+        <h4>Modern songs</h4>
+        <select name="offer_s">
+            <option value="" selected disabled hidden>Select</option>
+            {% for row in songs %}
+                <option value="{{ row['s_title'] }}">{{ row["s_title"] }}</option>
+            {% endfor %}
+        </select>
+        <br><br>
+    </div>
+
+    <div class="mb-3" style="background-color: lightgrey">
+        <h2 style="color: red">Specials</h2>
+        <h3><u>SONG 1</u></h3>
+        <h4>Modern songs</h4>
+        <select name="sp1">
+            <option value="" selected disabled hidden>Select</option>
+            {% for row in songs %}
+                <option value="{{ row['s_title'] }}">{{ row["s_title"] }}</option>
+            {% endfor %}
+        </select>
+        <br><br>
+        <h3><u>SONG 2</u></h3>
+        <h4>Modern songs</h4>
+        <select name="sp2">
+            <option value="" selected disabled hidden>Select</option>
+            {% for row in songs %}
+                <option value="{{ row['s_title'] }}">{{ row["s_title"] }}</option>
+            {% endfor %}
+        </select>
+        <br><br>
+        <h3><u>SONG 3</u></h3>
+        <h4>Modern songs</h4>
+        <select name="sp3">
+            <option value="" selected disabled hidden>Select</option>
+            {% for row in songs %}
+                <option value="{{ row['s_title'] }}">{{ row["s_title"] }}</option>
+            {% endfor %}
+        </select>
+        <br><br>
+    </div>
+    <div class="mb-3">
+        <h2 style="color: red">Invitation</h2>
+        <h4>Hymns</h4>
+        <select name="inv_h">
+            <option value="" selected disabled hidden>Select</option>
+            {% for row in hymns %}
+                <option value="{{ row['s_title'] }}" placeholder="Select">{{ row["s_title"] }}</option>
+            {% endfor %}
+        </select>
+        <br><br>
+        <h4>Modern songs</h4>
+        <select name="inv_s">
+            <option value="" selected disabled hidden>Select</option>
+            {% for row in songs %}
+                <option value="{{ row['s_title'] }}">{{ row["s_title"] }}</option>
+            {% endfor %}
+        </select>
+        <br><br>
+    </div>
+    <button class="btn btn-primary" type="submit">Generate</button>
+ </form>
 
 </div>
 {% endblock %}

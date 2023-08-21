@@ -1,0 +1,54 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Plan
+{% endblock %}
+
+{% block main %}
+<script>
+    function printDiv() {
+        var divContents = document.getElementById("GFG").innerHTML;
+        var a = window.open('', '', 'height=500, width=500');
+        a.document.write('<html>');
+        a.document.write(divContents);
+        a.document.write('</body></html>');
+        a.document.close();
+        a.print();
+    }
+</script>
+
+<div id="GFG">
+    <h1><b>Order of Service {{ date }}</b></h1><br>
+    <h2><u>Call to Worship</u></h2>
+
+    <h4>{{ call }}</h4>
+
+    <br>
+    <h2><u>Announcements</u></h2>
+    {% for row in a %}
+        {% if row != None %}
+        <h4>{{ row }}</h4>
+        {% endif %}
+    {% endfor %}
+    <br>
+    <h2><u>Offertory</u></h2>
+    <h4>{{ offer }}</h4>
+    <br>
+    <h2><u>Specials</u></h2>
+    {% for row in special %}
+        {% if row != None %}
+        <h4>{{ row }}</h4>
+        {% endif %}
+    {% endfor %}
+    <br>
+    {% for row in name %}
+    <h2><u>Children's Church:</u> <b>{{ row["name"] }}</b></h2>
+    {% endfor %}
+    <h2>Message</h2>
+    <br><br><br>
+    <h2><u>Invitation</u></h2>
+    <h4>{{ invite }}</h4>
+</div>
+<input type="button" value="PRINT"
+onclick="printDiv()">
+{% endblock %}
